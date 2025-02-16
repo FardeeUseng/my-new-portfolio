@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+const withNextIntl = require("next-intl/plugin")();
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -17,4 +18,4 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

@@ -1,0 +1,11 @@
+{
+  "Index": {
+    "title": "Home",
+    "description": "สวัสดีคับ",
+    "navigateToAbout": "Navigate to about"
+  },
+  "About": {
+    "title": "About",
+    "description": "This is the about page."
+  }
+}
