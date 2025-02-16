@@ -8,12 +8,10 @@ const { Content, Footer } = Layout;
 export default function MainPortfolioLayout({ children } : { children: React.ReactNode }) {
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Layout style={{ padding: "15px 30px 15px 30px" }}>
+      <Layout style={{ padding: "0 80px 0 80px", position: "relative" }}>
         <PortfolioHeader />
 
-        <Content>
-          {children}
-        </Content>
+        <Content>{children}</Content>
       </Layout>
 
       {/* Footer section */}
