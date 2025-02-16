@@ -125,3 +125,7 @@ body {
   overflow: auto;
   background: var(--color-background);
 }
+
+.border-red {
+  border: 1px solid red;
+}
