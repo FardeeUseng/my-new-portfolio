@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from "antd";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
@@ -14,8 +15,8 @@ export default function Home() {
   return (
     <div className="bg-primary">
       <p>{t('description')}</p>
-      <button onClick={() => handleChangeLocale('en')}>EN</button>
-      <button onClick={() => handleChangeLocale('th')}>TH</button>
+      <Button type="primary" onClick={() => handleChangeLocale('en')}>EN</Button>
+      <Button onClick={() => handleChangeLocale('th')}>TH</Button>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "../../styles/globals.css";
+import { ThemeProvider } from '@/providers/ThemeProvider';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -26,9 +27,11 @@ export default async function LocaleLayout({ children }: {
   return (
     <html lang={locale}>
       <body className={roboto.className}>
-        <NextIntlClientProvider locale={locale} messages={message}>
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider locale={locale} messages={message}>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
