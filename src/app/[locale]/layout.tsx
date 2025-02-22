@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "../../styles/globals.css";
 import { ThemeProvider } from '@/providers/ThemeProvider';
+import Favicon from "@/app/favicon.ico";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -15,6 +16,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "my portfolio",
+  icons: [{ rel: "icon", url: Favicon.src }],
 };
 
 export default async function LocaleLayout({ children }: {
