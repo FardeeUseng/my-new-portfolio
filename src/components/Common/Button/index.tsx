@@ -3,14 +3,14 @@
 import { Button, ButtonProps } from "antd";
 import styled from "styled-components";
 
-interface Props extends ButtonProps {
+interface CustomButtonProps extends ButtonProps {
   $rounded?: boolean; // Custom prop for rounded corners
   $shadow?: boolean; // Custom prop for shadow effect
   $primaryColor?: string; // Custom prop for primary color
   $secondaryColor?: string; // Custom prop for secondary color
 }
 
-const StyledButton = styled(Button)<Props>`
+const StyledButton = styled(Button)<CustomButtonProps>`
   transition: all 0.3s ease-in-out;
   ${({ $rounded }) => $rounded && "border-radius: 8px;"}
   ${({ $shadow }) => $shadow && "box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);"}
@@ -28,7 +28,7 @@ export default function CustomButton({
   $primaryColor,
   $secondaryColor,
   ...props
-}: Props) {
+}: CustomButtonProps) {
   return (
     <StyledButton
       $rounded={$rounded}

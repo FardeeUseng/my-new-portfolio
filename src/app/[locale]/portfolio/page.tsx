@@ -4,40 +4,81 @@ import { Paragraph, Title } from '@/components/Common/Typography'
 import { Col, Flex, Row } from 'antd'
 import Image from 'next/image'
 import profile from "@/assets/profile/profile2.png";
+import info1 from "@/assets/infographic/infographic-1.png";
+import info2 from "@/assets/infographic/infographic-2.png";
+import infoProfile2 from "@/assets/profile/info-profile-2.png";
+import reactIcon from "@/assets/icon/reactjs-icon.webp";
+import nextIcon from "@/assets/icon/nextjs-icon.jpg";
+import jsIcon from "@/assets/icon/js-icon.png";
+import tsIcon from "@/assets/icon/ts-icon.png";
+import antdIcon from "@/assets/icon/antd-icon.png";
+import muiIcon from "@/assets/icon/mui-icon.png";
+import tailwindIcon from "@/assets/icon/tailwind-icon.jpg";
+import reduxIcon from "@/assets/icon/redux-icon.png";
+import reactQueryIcon from "@/assets/icon/react-query-icon.png";
+import postmanIcon from "@/assets/icon/postman-icon.svg";
 // import ftu from "@/assets/education/ftu-logo.png";
 import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
 
 export default function Page() {
   return (
     <main>
-      <section className="flex justify-between mt-8 min-h-[calc(100vh-95px)]">
-        <div className="flex flex-col justify-center gap-y-3 w-full">
+      <section className="relative flex flex-col mt-8 min-h-[calc(100vh-95px)]">
+        <div className="absolute bottom-0 left-0">
+          <Image src={info1} alt="info1" height={250} />
+        </div>
+        <div className="absolute top-0 right-0">
+          <Image src={info2} alt="info1" height={250} />
+        </div>
+
+        <div className="flex-1 flex flex-col items-center justify-center gap-y-12">
           <div className="flex justify-center">
-            <span className='text-white text-center bg-thirdary rounded-full px-2 py-1'>
+            <span className='text-thirdary text-base text-center bg-blue-300 rounded-full px-3 py-1'>
               ขอต้อนรับสู่พอร์ตโฟลีโอ
             </span>
           </div>
+          <div className="flex justify-between items-center gap-x-14 w-full">
+            <div className="flex-1 flex flex-col justify-center items-end gap-y-3">
+              <div className="my-2 text-end">
+                <Title $color="#203162" level={2}>สวัสดีครับ, ผม</Title>
+                <Title $color="#203162">นาย ฟัรดี อูเซ็ง</Title>
+                <Title className="text-main-gradient" style={{ fontSize: "50px" }}>Frontend Developer</Title>
+              </div>
 
-          <div className="text-center">
-            <Title>สวัสดีครับ, ผมชื่อ</Title>
-            <Title>นาย ฟัรดี อูเซ็ง</Title>
-            <Title>Frontend Developer</Title>
+              <Flex justify="end" gap={10}>
+                <CustomButton type="primary">ติดต่อ</CustomButton>
+                <CustomButton type="primary">ผลงาน</CustomButton>
+              </Flex>
+
+              <Flex justify="end" gap={10}>
+                <CustomButton type="link" icon={<GithubOutlined />} />
+                <CustomButton type="link" icon={<MediumOutlined />} />
+                <CustomButton type="link" icon={<LinkedinOutlined />} />
+              </Flex>
+            </div>
+
+            <div className="flex-[0.8] flex gap-3">
+              <Image src={infoProfile2} alt='profile' height={300} />
+              <div className="flex flex-col justify-end gap-y-3">
+                <Image src={jsIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={tsIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={reactIcon} alt="reactJs" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={nextIcon} alt="nextJs" className="rounded-sm shadow-lg w-8 h-8" />
+              </div>
+              <div className="flex flex-col justify-end gap-y-3">
+                <Image src={antdIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={muiIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={tailwindIcon} alt="reactJs" className="rounded-sm shadow-lg w-8 h-8" />
+              </div>
+              <div className="flex flex-col justify-end gap-y-3">
+                <Image src={reduxIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={reactQueryIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
+              </div>
+              <div className="flex flex-col justify-end gap-y-3">
+                <Image src={postmanIcon} alt="javaScript" className="rounded-full shadow-lg w-8 h-8" />
+              </div>
+            </div>
           </div>
-
-          <Flex justify="center" gap={10}>
-            <CustomButton type="primary">ติดต่อ</CustomButton>
-            <CustomButton type="primary">ผลงาน</CustomButton>
-          </Flex>
-
-          <Flex justify="center" gap={10}>
-            <CustomButton type="link" icon={<GithubOutlined />} />
-            <CustomButton type="link" icon={<MediumOutlined />} />
-            <CustomButton type="link" icon={<LinkedinOutlined />} />
-          </Flex>
-        </div>
-
-        <div className="flex flex-col justify-end items-center gap-y-3 w-full">
-          <Image src={profile} alt='profile' height={250} width={250} />
         </div>
       </section>
 

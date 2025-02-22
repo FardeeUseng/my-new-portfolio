@@ -13,7 +13,7 @@ interface CustomTypographyProps {
 const Title = styled(Typography.Title)<CustomTypographyProps>`
   font-size: ${({ $fontSize }) => $fontSize || "24px"};
   font-weight: ${({ $fontWeight }) => $fontWeight || "600"};
-  color: ${({ $color }) => $color || "#000"};
+  color: ${({ $color }) => $color + " !important" || "#000"};
   line-height: ${({ $lineHeight }) => ($lineHeight || "1.5") + "!important"};
   margin: 0 !important;
 `;
