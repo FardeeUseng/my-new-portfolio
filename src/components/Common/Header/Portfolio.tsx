@@ -6,7 +6,7 @@ import { DownloadOutlined, MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Link } from "@/i18n/routing";
 import CustomButton from "../Button";
 import thaiFlag from "@/assets/flag/Flag-Thailand.webp";
-import englandFlag from "@/assets/flag/Flag-England.jpg";
+// import englandFlag from "@/assets/flag/Flag-England.jpg";
 import Image from "next/image";
 
 export default function PortfolioHeader() {
@@ -27,13 +27,13 @@ export default function PortfolioHeader() {
         <Link href="/portfolio">
           <CustomButton type="text" className="text-thirdary text-lg">หน้าหลัก</CustomButton>
         </Link>
-        <Link href="/portfolio/work">
+        <Link href="/work">
           <CustomButton type="text" className="text-thirdary text-lg">ผลงาน</CustomButton>
         </Link>
-        <Link href="/portfolio/activity">
+        <Link href="/activity">
           <CustomButton type="text" className="text-thirdary text-lg">กิจกรรม</CustomButton>
         </Link>
-        <Link href="/portfolio/blog">
+        <Link href="/blog">
           <CustomButton type="text" className="text-thirdary text-lg">บล๊อก</CustomButton>
         </Link>
       </div>

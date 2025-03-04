@@ -1,0 +1,44 @@
+[
+  {
+    "title": "การจัดการ state ใน ReactJs",
+    "description": "state ก็เหมือนสร้างตัวแปรเก็บ data ตัวหนึ่ง แต่ที่มันต่างก็คือ ถ้าข้อมูลใน state มีการเปลียนแปลง react จะ re-render component นั้นทุกครั้ง งั้นเรามาดูความต่างกัน",
+    "image_url": "https://miro.medium.com/v2/resize:fit:4800/format:webp/0*zmmLEnJuLVl8wSTf",
+    "url": "https://medium.com/@fardee.tat/การจัดการ-state-ใน-reactjs-a1aae3d2fa41"
+  },
+  {
+    "title": "มาทำความรู้จัก CSS Animation พื้นฐานโดยปราศจาก JavaScript กันเถอะ",
+    "description": "CSS Animation คือการใช้ CSS ในการกำหนดการเคลื่อนไหวของ Element นั้น ๆ ทำให้ Element นั้นเคลื่อนไหวตามที่เรากำหนด โดย Property ที่เกี่ยวข้องกับ CSS Animation คราว ๆ จะมีดังนี้",
+    "image_url": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*_LHvXQ_b_OvNwu9IPSFT_A.png",
+    "url": "https://medium.com/@fardee.tat/มาลองเขียน-css-animation-เล่น-ๆ-โดยปราศจาก-javascript-กันเถอะ-09d7b43ec947"
+  },
+  {
+    "title": "ลองทำ Responsive Web Design เล่น ๆ กันเถอะ",
+    "description": "Medium นี้เราจะมาลองทำ Responsive Web Design แบบง่าย ๆ ด้วย HTML และ CSS โดยที่เราจะสร้างหน้าเว็บให้รองรับการแสดงผลทุกขนาดหน้าจอหรือหน้าเว็บจะปรับขนาดการแสดงผลให้เหมาะสมเมื่อมีการเปลี่ยนขนาดหน้าจอ โดยที่เราจะใช้ CSS Media Queries",
+    "image_url": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*NOCLxS0V1PDeMeO2znyWcQ.png",
+    "url": "https://medium.com/@fardee.tat/ลองทำ-web-responsive-เล่น-ๆ-กันเถอะ-651bd713083d"
+  },
+  {
+    "title": "การใช้งาน Position ใน CSS",
+    "description": "Property position ใช้ในการกำหนดตำแหน่งให้กับ element ซึ่งที่เราจะเห็นบ่อยก็จะมีพวกการทำ navbar, sidebar หรืออื่นๆ ที่เราต้องกำหนด position ให้กับมัน โดย property position จะมีค่าดังนี้",
+    "image_url": "https://miro.medium.com/v2/resize:fit:640/format:webp/1*Rnm-9JiQKpXDYJOmWyjpEA.png",
+    "url": "https://medium.com/@fardee.tat/position-ใน-css-อีหยั๋งเอ๋ย-fc379133bd0e"
+  },
+  {
+    "title": "Display Grid คืออะไร",
+    "description": "CSS Grid layout มีไว้สำหรับจัดวาง element(องค์ประกอบ) ต่างๆ บนเว็บของเราให้เป็น columns(แนวตั้ง)และ rows(แนวนอน)ได้เช่นเดียวกันกับตาราง ซึ่งเราสามารถจัดวาง element ต่างๆ ไว้ในตำแหน่งที่เราต้องการได้ ทำให้เว็บได้มีความสวยงานและสมดุลยิ่งขึ้น",
+    "image_url": "https://miro.medium.com/v2/resize:fit:2000/format:webp/1*pP00oBOmKTkWImJEfO7nlw.png",
+    "url": "https://medium.com/@fardee.tat/display-grid-อีหยั๋งเอ๋ย-17b7fc0e11f6"
+  },
+  {
+    "title": "Display ใน CSS คืออะไร",
+    "description": "display คือ Property(คุณสมบัติ) ที่ใช้ในการกำหนดการแสดงผลและการจัดวาง Element(องค์ประกอบ) ต่าง ๆใน HTML โดยที่เราสามารถที่กำหนดค่าเพื่อเปลี่ยนวิธีการแสดงผลของ Element นั้น ๆได้ โดย Display Property จะมีหลายตัวแต่ในบทนี้จะอธิบายแค่ตัวพื้นฐานที่เราใช้กันบ่อย โดยจะมีดังต่อไปนี้",
+    "image_url": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*-DaJpl6NWWyB9abDkIsjIA.png",
+    "url": "https://medium.com/@fardee.tat/display-css-อียั๊งเอ๋ย-b5df4251923a"
+  },
+  {
+    "title": "กว่าจะมาเป็น Front-end Developer",
+    "description": "สวัสดีคับ วันนี้ผู้เขียนจะเล่าประสบการณ์ของตัวเองกว่าจะมาเป็น Front-end Developer โดยผู้เขียนเองจะเล่าตั้งแต่ก่อนเข้ามหาลัย -> เข้ามหาลัย -> ทำงาน",
+    "image_url": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*DvoEWFnYXwKp6zNnjKMdlw.jpeg",
+    "url": "https://medium.com/@fardee.tat/กว่าจะมาเป็น-front-end-developer-efa01ed932e9"
+  }
+]

@@ -17,6 +17,7 @@ import tailwindIcon from "@/assets/icon/tailwind-icon.jpg";
 import reduxIcon from "@/assets/icon/redux-icon.png";
 import reactQueryIcon from "@/assets/icon/react-query-icon.png";
 import postmanIcon from "@/assets/icon/postman-icon.svg";
+import gitIcon from "@/assets/icon/git-icon.webp";
 // import ftu from "@/assets/education/ftu-logo.png";
 import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
 
@@ -43,6 +44,7 @@ export default function Page() {
                 <Title $color="#203162" level={2}>สวัสดีครับ, ผม</Title>
                 <Title $color="#203162">นาย ฟัรดี อูเซ็ง</Title>
                 <Title className="text-main-gradient" style={{ fontSize: "50px" }}>Frontend Developer</Title>
+                <Title className="text-main-gradient" level={5}>ReactJs, NextJs, JavaScript and TypeScript</Title>
               </div>
 
               <Flex justify="end" gap={10}>
@@ -66,16 +68,16 @@ export default function Page() {
                 <Image src={nextIcon} alt="nextJs" className="rounded-sm shadow-lg w-8 h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={antdIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={muiIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={tailwindIcon} alt="reactJs" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={antdIcon} alt="ant design" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={muiIcon} alt="material ui" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={tailwindIcon} alt="tailwind" className="rounded-sm shadow-lg w-8 h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={reduxIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={reactQueryIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={reduxIcon} alt="redux" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={reactQueryIcon} alt="react query" className="rounded-sm shadow-lg w-8 h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={postmanIcon} alt="javaScript" className="rounded-full shadow-lg w-8 h-8" />
+                <Image src={gitIcon} alt="git version control" className="rounded-full shadow-lg w-8 h-8" />
               </div>
             </div>
           </div>
@@ -163,10 +165,12 @@ export default function Page() {
           <Col span={12}>
             <div className="flex gap-x-5">
               <div className="mt-2">
-                <img
+                <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXj3_B7pEuxj2DxAyPlNqPvJ4lbQr-9p1mQQ&s"
                   alt="tiger" 
                   className="w-16 min-w-16 h-16 min-h-16 object-cover rounded-full"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div>
@@ -191,10 +195,12 @@ export default function Page() {
           <Col span={12}>
             <div className="flex gap-x-5">
               <div className="mt-2">
-                <img
+                <Image
                   src="https://media.licdn.com/dms/image/D560BAQGHzrTlP1mddQ/company-logo_200_200/0/1685415167802?e=2147483647&v=beta&t=Bqo1jfT_2yPHC4dgW--DyMorq0hl8KR_Hb18t5mySKU"
                   alt="tiger" 
                   className="w-16 min-w-16 h-16 min-h-16 object-cover rounded-full"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div>
@@ -221,10 +227,12 @@ export default function Page() {
           <Col span={12}>
             <div className="flex gap-x-5">
               <div className="mt-2">
-                <img
+                <Image
                   src="https://media.licdn.com/dms/image/D560BAQGHzrTlP1mddQ/company-logo_200_200/0/1685415167802?e=2147483647&v=beta&t=Bqo1jfT_2yPHC4dgW--DyMorq0hl8KR_Hb18t5mySKU"
                   alt="tiger" 
                   className="w-16 min-w-16 h-16 min-h-16 object-cover rounded-full"
+                  width={16}
+                  height={16}
                 />
               </div>
               <div>
