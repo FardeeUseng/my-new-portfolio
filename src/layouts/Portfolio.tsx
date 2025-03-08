@@ -1,7 +1,8 @@
 'use client'
 
-import PortfolioHeader from '@/components/Common/Header/Portfolio';
 import { Layout } from 'antd';
+import '@ant-design/v5-patch-for-react-19';
+import PortfolioHeader from '@/components/Common/Header/Portfolio';
 
 const { Content, Footer } = Layout;
 
