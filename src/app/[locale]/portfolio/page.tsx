@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomButton from '@/components/Common/Button'
-import { Paragraph, Title } from '@/components/Common/Typography'
-import { Col, Flex, Row } from 'antd'
+import { Title } from '@/components/Common/Typography'
+import { Col, Row } from 'antd'
 import Image from 'next/image'
 import profile from "@/assets/profile/profile2.png";
 import info1 from "@/assets/infographic/infographic-1.png";
@@ -22,76 +22,76 @@ import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/ic
 export default function Page() {
   return (
     <main>
-      <section className="relative flex flex-col mt-8 min-h-[calc(100vh-95px)]">
+      <section className="relative flex flex-col md:mt-8 min-h-screen md:min-h-[calc(100vh-95px)]">
         <div className="absolute bottom-0 left-0">
-          <Image src={info1} alt="info1" height={250} />
+          <Image src={info1} alt="info1" height={250} className="h-40 lg:h-60 w-28 lg:w-36" />
         </div>
         <div className="absolute top-0 right-0">
-          <Image src={info2} alt="info1" height={250} />
+          <Image src={info2} alt="info1" height={250} className="h-40 lg:h-60 w-28 lg:w-36" />
         </div>
 
         <div className="flex-1 flex flex-col items-center justify-center gap-y-12">
-          <div className="flex justify-center">
-            <span className='text-thirdary text-base text-center bg-blue-300 rounded-full px-3 py-1'>
-              ขอต้อนรับสู่พอร์ตโฟลีโอ
+          <div className="flex justify-center bg-blue-300 rounded-full">
+            <span className="text-thirdary text-base text-center px-3 py-1 text-main-gradient font-bold">
+              Wellcome to my Portfolio
             </span>
           </div>
-          <div className="flex justify-between items-center gap-x-14 w-full">
-            <div className="flex-1 flex flex-col justify-center items-end gap-y-3">
-              <div className="my-2 text-end">
-                <Title $color="#203162" level={2}>สวัสดีครับ, ผม</Title>
-                <Title $color="#203162">นาย ฟัรดี อูเซ็ง</Title>
-                <Title className="text-main-gradient" style={{ fontSize: "50px" }}>Frontend Developer</Title>
-                <Title className="text-main-gradient" level={5}>ReactJs, NextJs, JavaScript and TypeScript</Title>
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-x-5 xl:gap-x-14 w-full">
+            <div className="flex-1 flex flex-col justify-center items-center lg:items-end gap-y-3">
+              <div className="my-2 text-center lg:text-end">
+                <h1 className="text-thirdary dark:text-white text-2xl lg:text-3xl font-bold my-2">Hii !!, I'm</h1>
+                <h1 className="text-thirdary dark:text-white text-3xl lg:text-4xl font-bold my-2">Fardee Useng</h1>
+                <h1 className="text-main-gradient text-4xl md:text-5xl font-bold lg:text-5xl mt-5 lg:mt-2">Frontend Developer</h1>
+                <h6 className="text-main-gradient mt-2 md:text-base font-semibold">JavaScript, TypeScript, ReactJs and NextJs</h6>
               </div>
 
-              <Flex justify="end" gap={10}>
-                <CustomButton type="primary">ติดต่อ</CustomButton>
-                <CustomButton type="primary">ผลงาน</CustomButton>
-              </Flex>
+              <div className="flex gap-3 justify-center">
+                <CustomButton type="primary">Contact Me</CustomButton>
+                <CustomButton type="primary">My Work</CustomButton>
+              </div>
 
-              <Flex justify="end" gap={10}>
-                <CustomButton type="link" icon={<GithubOutlined />} />
-                <CustomButton type="link" icon={<MediumOutlined />} />
-                <CustomButton type="link" icon={<LinkedinOutlined />} />
-              </Flex>
+              <div className="flex gap-3 justify-center">
+                <CustomButton className="dark:text-white" type="link" icon={<GithubOutlined />} />
+                <CustomButton className="dark:text-white" type="link" icon={<MediumOutlined />} />
+                <CustomButton className="dark:text-white" type="link" icon={<LinkedinOutlined />} />
+              </div>
             </div>
 
-            <div className="flex-[0.8] flex gap-3">
-              <Image src={infoProfile2} alt='profile' height={300} />
+            <div className="hidden lg:flex gap-3 flex-[0.8]">
+              <Image src={infoProfile2} alt='profile' height={300} className="h-80" />
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={jsIcon} alt="javaScript" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={tsIcon} alt="typeScript" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={reactIcon} alt="reactJs" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={nextIcon} alt="nextJs" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={jsIcon} alt="javaScript" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={tsIcon} alt="typeScript" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={reactIcon} alt="reactJs" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={nextIcon} alt="nextJs" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={antdIcon} alt="ant design" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={muiIcon} alt="material ui" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={tailwindIcon} alt="tailwind" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={antdIcon} alt="ant design" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={muiIcon} alt="material ui" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={tailwindIcon} alt="tailwind" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={reduxIcon} alt="redux" className="rounded-sm shadow-lg w-8 h-8" />
-                <Image src={reactQueryIcon} alt="react query" className="rounded-sm shadow-lg w-8 h-8" />
+                <Image src={reduxIcon} alt="redux" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
+                <Image src={reactQueryIcon} alt="react query" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
               </div>
               <div className="flex flex-col justify-end gap-y-3">
-                <Image src={gitIcon} alt="git version control" className="rounded-full shadow-lg w-8 h-8" />
+                <Image src={gitIcon} alt="git version control" className="rounded-full shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="flex my-20 gap-x-10">
-        <div className="flex-[0.7] flex justify-center">
+      <section className="flex gap-x-10 my-10 lg:my-20 mx-5 lg:mx-0">
+        <div className="flex-[0.7] hidden md:flex justify-center">
           <Image src={profile} alt='profile' height={250} width={250} />
         </div>
         <div className="flex-1 flex flex-col justify-center gap-y-10">
           <div className="flex flex-col gap-y-5">
-            <Title className="text-center">About Me</Title>
-            <Paragraph className="text-center">
+            <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">About Me</h1>
+            <p className="text-center text-base md:text-lg">
               I am a Front-End Developer with 2.6 years of experience specializing in JavaScript, TypeScript, React, and Next.js. Passionate about building user-friendly and high-performance web applications, I enjoy crafting intuitive UI/UX experiences and optimizing front-end performance. Always eager to learn and stay updated with the latest technologies in the web development ecosystem.
-            </Paragraph>
+            </p>
           </div>
 
           {/* <Flex>
@@ -157,12 +157,12 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="my-20">
-        <Title className="text-center">Work Experience</Title>
+      <section className="my-10 lg:my-20 mx-5 lg:mx-0">
+        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">Work Experience</h1>
         <Row gutter={[30, 30]} className="mt-5">
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <div className="flex gap-x-5">
-              <div className="mt-2">
+              <div className="hidden lg:block lg:mt-2">
                 <Image
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXj3_B7pEuxj2DxAyPlNqPvJ4lbQr-9p1mQQ&s"
                   alt="tiger" 
@@ -174,7 +174,7 @@ export default function Page() {
               <div>
                 <Title level={2}>May 2024 - APR 2025:</Title>
                 <Title level={5}> Front-End Developer at PTT Digital Solution (Outsourced Onsite)</Title>
-                <ul className="list-disc pl-5 mt-5">
+                <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
                   {[
                     "Developed and maintained a POS BackOffice Web Application for a large-scale retail business.",
                     "Built the front-end using Next.js and TypeScript, ensuring scalability and performance.",
@@ -182,7 +182,7 @@ export default function Page() {
                     "Integrated various APIs to support POS operations, data analytics, and real-time updates."
                   ].map((li, index) => (
                     <li key={index}>
-                      <Paragraph>{li}</Paragraph>
+                      <p>{li}</p>
                     </li>
                   ))}
                 </ul>
@@ -190,9 +190,9 @@ export default function Page() {
             </div>
           </Col>
 
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <div className="flex gap-x-5">
-              <div className="mt-2">
+              <div className="hidden lg:block lg:mt-2">
                 <Image
                   src="https://media.licdn.com/dms/image/D560BAQGHzrTlP1mddQ/company-logo_200_200/0/1685415167802?e=2147483647&v=beta&t=Bqo1jfT_2yPHC4dgW--DyMorq0hl8KR_Hb18t5mySKU"
                   alt="tiger" 
@@ -205,7 +205,7 @@ export default function Page() {
                 <Title level={2}>Set 2023 - Dec 2023:</Title>
                 <Title level={5}>ICreativeSystems Co.,Ltd – Full-Stack Developer </Title>
 
-                <ul className="list-disc pl-5 mt-5">
+                <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
                   {[
                     "Transitioned to full-stack development for the Influencer Hiring Web App.",
                     "Focused primarily on CRUD operations using Golang and PostgreSQL for back-end development.",
@@ -214,7 +214,7 @@ export default function Page() {
                     "Worked with UX/UI designers, back-end developers, and testers to ensure a cohesive development process."
                   ].map((li, index) => (
                     <li key={index}>
-                      <Paragraph>{li}</Paragraph>
+                      <p>{li}</p>
                     </li>
                   ))}
                 </ul>
@@ -222,9 +222,9 @@ export default function Page() {
             </div>
           </Col>
 
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <div className="flex gap-x-5">
-              <div className="mt-2">
+              <div className="hidden lg:block lg:mt-2">
                 <Image
                   src="https://media.licdn.com/dms/image/D560BAQGHzrTlP1mddQ/company-logo_200_200/0/1685415167802?e=2147483647&v=beta&t=Bqo1jfT_2yPHC4dgW--DyMorq0hl8KR_Hb18t5mySKU"
                   alt="tiger" 
@@ -239,7 +239,7 @@ export default function Page() {
                 <ul className="list-disc pl-5 mt-5">
                   <li>
                     <Title level={4}>Project 1: POS System (Electron.js)</Title>
-                    <ul className="list-decimal pl-5">
+                    <ul className="list-decimal pl-5 text-base md:text-lg">
                       {[
                         "Took over and maintained an existing POS system built with Electron.js, ensuring stability and performance improvements.",
                         "Implemented UI enhancements and bug fixes, optimizing system usability and responsiveness.",
@@ -248,7 +248,7 @@ export default function Page() {
                         "Collaborated closely with UX/UI designers, back-end developers, and testers to improve overall user experience."
                       ].map((li, index) => (
                         <li key={index}>
-                          <Paragraph>{li}</Paragraph>
+                          <p>{li}</p>
                         </li>
                       ))}
                     </ul>
@@ -256,7 +256,7 @@ export default function Page() {
 
                   <li>
                     <Title level={4}>Project 2: Influencer Hiring Web App(HashU)</Title>
-                    <ul className="list-decimal pl-5">
+                    <ul className="list-decimal pl-5 text-base md:text-lg">
                       {[
                         "Developed a web application for influencer hiring, focusing on seamless user experience and high-performance UI.",
                         "Used React.js, TypeScript, and Material-UI (MUI) to build a scalable and responsive front-end.",
@@ -265,7 +265,7 @@ export default function Page() {
                         "Worked with UX/UI designers, back-end developers, and testers to refine the application’s design and functionality."
                       ].map((li, index) => (
                         <li key={index}>
-                          <Paragraph>{li}</Paragraph>
+                          <p>{li}</p>
                         </li>
                       ))}
                     </ul>
@@ -277,12 +277,12 @@ export default function Page() {
         </Row>
       </section>
 
-      <section className="my-20">
-        <Title className="text-center">Skills & Technologies</Title>
-        <Row gutter={[30, 30]} className="mt-5">
-          <Col span={12}>
+      <section className="my-10 lg:my-20 mx-5 lg:mx-0">
+        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">Skills & Technologies</h1>
+        <Row gutter={[30, 30]} className="mt-5  sm:pl-24">
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <Title level={3}>Frontend Development</Title>
-            <ul className="list-disc pl-5 mt-5">
+            <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
               {[
                 "Languages: JavaScript (ES6+), TypeScript, HTML",
                 "Frameworks & Libraries: React.js, Next.js",
@@ -292,36 +292,37 @@ export default function Page() {
                 "Animations: Framer Motion"
               ].map((li, index) => (
                 <li key={index}>
-                  <Paragraph>{li}</Paragraph>
+                  <p>{li}</p>
                 </li>
               ))}
             </ul>
           </Col>
 
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <Title level={3}>API Development</Title>
-            <ul className="list-disc pl-5 mt-5">
+            <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
               {[
                 "Data Fetching & API Handling: Axios",
                 "Authentication & Security: NextAuth.js",
                 "Containerization: Docker"
               ].map((li, index) => (
                 <li key={index}>
-                  <Paragraph>{li}</Paragraph>
+                  <p>{li}</p>
                 </li>
               ))}
             </ul>
           </Col>
 
-          <Col span={12}>
+          <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <Title level={3}>Tools & Workflow</Title>
-            <ul className="list-disc pl-5 mt-5">
+            <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
               {[
                 "Design & Prototyping: Figma",
-                "API Testing & Development: Postman"
+                "API Testing & Development: Postman",
+                "Version Control: Git, GitHub and Gitlab"
               ].map((li, index) => (
                 <li key={index}>
-                  <Paragraph>{li}</Paragraph>
+                  <p>{li}</p>
                 </li>
               ))}
             </ul>

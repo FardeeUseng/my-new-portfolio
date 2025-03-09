@@ -18,10 +18,10 @@ export default function Page() {
   return (
     <div className="mt-8">
       <div className="mt-12">
-        <Title>Mediuam</Title>
+        <h1 className="text-3xl text-thirdary font-semibold dark:text-white">Mediuam</h1>
         <Row className="mt-4" gutter={[20, 20]}>
           {mediuams.map((mediuam, index) => (
-            <Col key={index} span={6}>
+            <Col key={index} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }} lg={{ span: 6 }}>
               <MidiuamCard
                 title={mediuam.title}
                 description={mediuam.description}
@@ -33,10 +33,10 @@ export default function Page() {
         </Row>
       </div>
       <div className="mt-12">
-        <Title>Traveling</Title>
+        <h1 className="text-3xl text-thirdary font-semibold dark:text-white">Traveling</h1>
         <Row className="mt-4" gutter={[20, 20]}>
           {travelings.map((travel, index) => (
-            <Col key={index} span={6}>
+            <Col key={index} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }} lg={{ span: 6 }}>
               <MidiuamCard
                 title={travel.title}
                 description={travel.description}
@@ -53,7 +53,7 @@ export default function Page() {
 
 function MidiuamCard({ title, description, image_url } : CardProps) {
   return (
-    <div className="h-80 overflow-hidden rounded-lg bg-white shadow-lg cursor-pointer">
+    <div className="h-80 overflow-hidden rounded-lg bg-white dark:bg-grey-900 shadow-lg cursor-pointer">
       <Image
         src={image_url}
         alt="mediuam"

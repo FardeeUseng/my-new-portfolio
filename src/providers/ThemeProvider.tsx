@@ -1,7 +1,8 @@
 "use client";
 
-import { ConfigProvider, ThemeConfig } from "antd";
+import { ConfigProvider } from "antd";
 import { createContext, useContext, useEffect, useState } from "react";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 // Define ThemeContext for global access
 const ThemeContext = createContext<{
@@ -11,23 +12,6 @@ const ThemeContext = createContext<{
   isDark: false,
   toggleTheme: () => {},
 });
-
-// Define Ant Design themes
-const lightTheme: ThemeConfig = {
-  token: {
-    colorPrimary: "#1677ff", // Customize primary color
-    colorBgBase: "#ffffff",
-    colorTextBase: "#000000",
-  },
-};
-
-const darkTheme: ThemeConfig = {
-  token: {
-    colorPrimary: "#1677ff",
-    colorBgBase: "#1a1a1a",
-    colorTextBase: "#ffffff",
-  },
-};
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [isDark, setIsDark] = useState(false);
@@ -49,8 +33,36 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <ConfigProvider theme={isDark ? darkTheme : lightTheme}>
-        {children}
+      <ConfigProvider
+        theme={isDark ? {
+          token: {
+            colorPrimary: "#1d1f21",
+            colorBgBase: "#1a1a1a",
+            colorTextBase: "#ffffff",
+          },
+        } : {
+          token: {
+            colorPrimary: "#1677ff",
+            colorBgBase: "#ffffff",
+            colorTextBase: "#000000",
+          }
+        }}
+      >
+        <StyledThemeProvider
+          theme={isDark ? {
+            primaryColor: "#1890ff",
+            secondaryColor: "#ffffff",
+            backgroundColor: "#f5f5f5",
+            textColor: "#000000",
+          } : {
+            primaryColor: "#1d1f21", // Dark Gray
+            secondaryColor: "#ffffff",
+            backgroundColor: "#121212", // Dark Mode Background
+            textColor: "#ffffff",
+          }}
+        >
+          {children}
+        </StyledThemeProvider>
       </ConfigProvider>
     </ThemeContext.Provider>
   );
