@@ -8,7 +8,7 @@ import thaiFlag from "@/assets/flag/Flag-Thailand.webp";
 import englandFlag from "@/assets/flag/Flag-England.jpg";
 import Image from "next/image";
 import { useTheme } from "@/providers/ThemeProvider";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Sidebar from "../Sidbar";
@@ -23,6 +23,8 @@ export default function PortfolioHeader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const allQueries = Object.fromEntries(searchParams.entries());
+
+  const tNavbar = useTranslations("Navbar");
 
   const handleChangeaLocal = (newLocal: string) => {
     router.replace(
@@ -75,12 +77,12 @@ export default function PortfolioHeader() {
             <div className="flex md:hidden gap-x-2">
               <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
                 <CustomButton type="primary" className="font-semibold">
-                  Resume
+                  {tNavbar("resume")}
                 </CustomButton>
               </a>
               <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
                 <CustomButton type="primary" className="font-semibold">
-                  CV
+                  {tNavbar("cv")}
                 </CustomButton>
               </a>
             </div>
@@ -88,12 +90,12 @@ export default function PortfolioHeader() {
             <div className="hidden md:flex gap-x-2">
               <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
                 <CustomButton type="primary" icon={<DownloadOutlined />} className="font-semibold">
-                  Resume
+                  {tNavbar("resume")}
                 </CustomButton>
               </a>
               <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
                 <CustomButton type="primary" icon={<DownloadOutlined />} className="font-semibold">
-                  CV
+                  {tNavbar("cv")}
                 </CustomButton>
               </a>
             </div>
@@ -137,16 +139,17 @@ export default function PortfolioHeader() {
 
         <div className="flex gap-x-1">
           {[
-            { label: "Portfolio", path: "/portfolio" },
-            { label: "Work", path: "/work" },
-            { label: "Activity", path: "/activity" },
-            { label: "Blog", path: "/blog" },
+            { label: tNavbar("portfolio"), path: "/portfolio", disabled: false },
+            { label: tNavbar("work"), path: "/work", disabled: true },
+            { label: tNavbar("activity"), path: "/activity", disabled: true },
+            { label: tNavbar("blog"), path: "/blog", disabled: false },
           ].map((item, index) => (
             <Link href={item.path} key={index}>
               <CustomButton
                 type={pathname === item.path ? "primary" : "text"}
                 danger={pathname === item.path}
                 className="text-thirdary text-lg font-semibold"
+                disabled={item.disabled}
               >
                 {item.label}
               </CustomButton>
@@ -158,12 +161,12 @@ export default function PortfolioHeader() {
           <div className="flex gap-x-2">
             <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
               <CustomButton type="primary" icon={<DownloadOutlined />} className="font-semibold">
-                Resume
+                {tNavbar("resume")}
               </CustomButton>
             </a>
             <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
               <CustomButton type="primary" icon={<DownloadOutlined />} className="font-semibold">
-                CV
+                {tNavbar("cv")}
               </CustomButton>
             </a>
           </div>

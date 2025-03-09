@@ -18,8 +18,13 @@ import reduxIcon from "@/assets/icon/redux-icon.png";
 import reactQueryIcon from "@/assets/icon/react-query-icon.png";
 import gitIcon from "@/assets/icon/git-icon.webp";
 import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
+import { useTranslations } from 'next-intl'
 
 export default function Page() {
+  const tPort = useTranslations("Portfolio");
+  const tIntro = useTranslations("Portfolio.introduction");
+  const tAboutMe = useTranslations("Portfolio.about_me");
+  const tWork = useTranslations("Portfolio.work_experience");
   return (
     <main>
       <section className="relative flex flex-col md:mt-8 min-h-screen md:min-h-[calc(100vh-95px)]">
@@ -33,21 +38,25 @@ export default function Page() {
         <div className="flex-1 flex flex-col items-center justify-center gap-y-12">
           <div className="flex justify-center bg-blue-300 rounded-full">
             <span className="text-thirdary text-base text-center px-3 py-1 text-main-gradient font-bold">
-              Wellcome to my Portfolio
+              {tIntro("wellcome_to_my_portfolio")}
             </span>
           </div>
           <div className="flex flex-col lg:flex-row justify-between items-center gap-x-5 xl:gap-x-14 w-full">
             <div className="flex-1 flex flex-col justify-center items-center lg:items-end gap-y-3">
               <div className="my-2 text-center lg:text-end">
-                <h1 className="text-thirdary dark:text-white text-2xl lg:text-3xl font-bold my-2">Hii !!, I'm</h1>
-                <h1 className="text-thirdary dark:text-white text-3xl lg:text-4xl font-bold my-2">Fardee Useng</h1>
-                <h1 className="text-main-gradient text-4xl md:text-5xl font-bold lg:text-5xl mt-5 lg:mt-2">Frontend Developer</h1>
-                <h6 className="text-main-gradient mt-2 md:text-base font-semibold">JavaScript, TypeScript, ReactJs and NextJs</h6>
+                <h1 className="text-thirdary dark:text-white text-2xl lg:text-3xl font-bold my-2">{tIntro("hi_i_am")}</h1>
+                <h1 className="text-thirdary dark:text-white text-3xl lg:text-4xl font-bold my-2">
+                  {tIntro("fardee_useng")}
+                </h1>
+                <h1 className="text-main-gradient text-4xl md:text-5xl font-bold lg:text-5xl mt-5 lg:mt-2">
+                  {tIntro("frontend_developer")}
+                </h1>
+                <h6 className="text-main-gradient mt-2 md:text-base font-semibold">{tIntro("skills")}</h6>
               </div>
 
               <div className="flex gap-3 justify-center">
-                <CustomButton type="primary">Contact Me</CustomButton>
-                <CustomButton type="primary">My Work</CustomButton>
+                <CustomButton type="primary">{tIntro("contact_me")}</CustomButton>
+                <CustomButton type="primary">{tIntro("my_work")}</CustomButton>
               </div>
 
               <div className="flex gap-3 justify-center">
@@ -84,13 +93,20 @@ export default function Page() {
 
       <section className="flex gap-x-10 my-10 lg:my-20 mx-5 lg:mx-0">
         <div className="flex-[0.7] hidden md:flex justify-center">
-          <Image src={profile} alt='profile' height={250} width={250} />
+          <div
+            className="bg-accent-content w-72 flex justify-center"
+            style={{ borderRadius: "62% 38% 65% 35% / 57% 58% 42% 43%" }}
+          >
+            <Image src={profile} alt='profile' height={250} className="h-80 w-48 object-cover" />
+          </div>
         </div>
         <div className="flex-1 flex flex-col justify-center gap-y-10">
           <div className="flex flex-col gap-y-5">
-            <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">About Me</h1>
+            <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">
+              {tAboutMe("title")}
+            </h1>
             <p className="text-center text-base md:text-lg">
-              I am a Front-End Developer with 2.6 years of experience specializing in JavaScript, TypeScript, React, and Next.js. Passionate about building user-friendly and high-performance web applications, I enjoy crafting intuitive UI/UX experiences and optimizing front-end performance. Always eager to learn and stay updated with the latest technologies in the web development ecosystem.
+              {tAboutMe("description")}
             </p>
           </div>
 
@@ -158,7 +174,7 @@ export default function Page() {
       </section>
 
       <section className="my-10 lg:my-20 mx-5 lg:mx-0">
-        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">Work Experience</h1>
+        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">{tWork("title")}</h1>
         <Row gutter={[30, 30]} className="mt-5">
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <div className="flex gap-x-5">
@@ -172,14 +188,14 @@ export default function Page() {
                 />
               </div>
               <div>
-                <Title level={2}>May 2024 - APR 2025:</Title>
-                <Title level={5}> Front-End Developer at PTT Digital Solution (Outsourced Onsite)</Title>
+                <Title level={2}>{tWork("frontend_developer_at_ptt.work_range")}</Title>
+                <Title level={5}>{tWork("frontend_developer_at_ptt.title")}</Title>
                 <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
                   {[
-                    "Developed and maintained a POS BackOffice Web Application for a large-scale retail business.",
-                    "Built the front-end using Next.js and TypeScript, ensuring scalability and performance.",
-                    "Worked closely with back-end developers and business teams (without a dedicated UX/UI team) to design and implement UI components based on business requirements.",
-                    "Integrated various APIs to support POS operations, data analytics, and real-time updates."
+                    tWork("frontend_developer_at_ptt.list_1"),
+                    tWork("frontend_developer_at_ptt.list_2"),
+                    tWork("frontend_developer_at_ptt.list_3"),
+                    tWork("frontend_developer_at_ptt.list_4")
                   ].map((li, index) => (
                     <li key={index}>
                       <p>{li}</p>
@@ -202,16 +218,16 @@ export default function Page() {
                 />
               </div>
               <div>
-                <Title level={2}>Set 2023 - Dec 2023:</Title>
-                <Title level={5}>ICreativeSystems Co.,Ltd – Full-Stack Developer </Title>
+                <Title level={2}>{tWork("fullstack_developer_at_ics.work_range")}</Title>
+                <Title level={5}>{tWork("fullstack_developer_at_ics.title")}</Title>
 
                 <ul className="list-disc pl-5 mt-5 text-base md:text-lg">
                   {[
-                    "Transitioned to full-stack development for the Influencer Hiring Web App.",
-                    "Focused primarily on CRUD operations using Golang and PostgreSQL for back-end development.",
-                    "Developed and integrated RESTful APIs to handle data storage and retrieval.",
-                    "Maintained and improved the front-end with React.js and TypeScript, ensuring a smooth user experience.",
-                    "Worked with UX/UI designers, back-end developers, and testers to ensure a cohesive development process."
+                    tWork("fullstack_developer_at_ics.list_1"),
+                    tWork("fullstack_developer_at_ics.list_2"),
+                    tWork("fullstack_developer_at_ics.list_3"),
+                    tWork("fullstack_developer_at_ics.list_4"),
+                    tWork("fullstack_developer_at_ics.list_5")
                   ].map((li, index) => (
                     <li key={index}>
                       <p>{li}</p>
@@ -234,18 +250,18 @@ export default function Page() {
                 />
               </div>
               <div>
-                <Title level={2}>Jun 2022 - Aug 2023:</Title>
-                <Title level={5}>Front-end Developer at ICreativeSystems Co.,Ltd</Title>
+                <Title level={2}>{tWork("frontend_developer_at_ics.work_range")}</Title>
+                <Title level={5}>{tWork("frontend_developer_at_ics.title")}</Title>
                 <ul className="list-disc pl-5 mt-5">
                   <li>
-                    <Title level={4}>Project 1: POS System (Electron.js)</Title>
+                    <Title level={4}>{tWork("frontend_developer_at_ics.pos_project.title")}</Title>
                     <ul className="list-decimal pl-5 text-base md:text-lg">
                       {[
-                        "Took over and maintained an existing POS system built with Electron.js, ensuring stability and performance improvements.",
-                        "Implemented UI enhancements and bug fixes, optimizing system usability and responsiveness.",
-                        "Integrated RESTful APIs to synchronize data and enhance real-time processing.",
-                        "Developed fully responsive UI for different screen sizes and resolutions.",
-                        "Collaborated closely with UX/UI designers, back-end developers, and testers to improve overall user experience."
+                        tWork("frontend_developer_at_ics.pos_project.list_1"),
+                        tWork("frontend_developer_at_ics.pos_project.list_2"),
+                        tWork("frontend_developer_at_ics.pos_project.list_3"),
+                        tWork("frontend_developer_at_ics.pos_project.list_4"),
+                        tWork("frontend_developer_at_ics.pos_project.list_5")
                       ].map((li, index) => (
                         <li key={index}>
                           <p>{li}</p>
@@ -255,14 +271,14 @@ export default function Page() {
                   </li>
 
                   <li>
-                    <Title level={4}>Project 2: Influencer Hiring Web App(HashU)</Title>
+                    <Title level={4}>{tWork("frontend_developer_at_ics.hashu_project.title")}</Title>
                     <ul className="list-decimal pl-5 text-base md:text-lg">
                       {[
-                        "Developed a web application for influencer hiring, focusing on seamless user experience and high-performance UI.",
-                        "Used React.js, TypeScript, and Material-UI (MUI) to build a scalable and responsive front-end.",
-                        "Integrated RESTful APIs to fetch and display influencer data dynamically.",
-                        "Ensured the application was fully responsive across different devices and screen resolutions.",
-                        "Worked with UX/UI designers, back-end developers, and testers to refine the application’s design and functionality."
+                        tWork("frontend_developer_at_ics.hashu_project.list_1"),
+                        tWork("frontend_developer_at_ics.hashu_project.list_2"),
+                        tWork("frontend_developer_at_ics.hashu_project.list_3"),
+                        tWork("frontend_developer_at_ics.hashu_project.list_4"),
+                        tWork("frontend_developer_at_ics.hashu_project.list_5")
                       ].map((li, index) => (
                         <li key={index}>
                           <p>{li}</p>
@@ -278,7 +294,9 @@ export default function Page() {
       </section>
 
       <section className="my-10 lg:my-20 mx-5 lg:mx-0">
-        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">Skills & Technologies</h1>
+        <h1 className="text-3xl lg:text-5xl text-center text-thirdary dark:text-white font-bold">
+          {tPort("skills_technologies")}
+        </h1>
         <Row gutter={[30, 30]} className="mt-5  sm:pl-24">
           <Col xs={{ span: 24 }} lg={{ span: 12 }}>
             <Title level={3}>Frontend Development</Title>

@@ -1,11 +1,66 @@
 {
-  "Index": {
-    "title": "Home",
-    "description": "สวัสดีคับ",
-    "navigateToAbout": "Navigate to about"
+  "Navbar": {
+    "portfolio": "พอร์ตโฟลิโอ",
+    "work": "ผลงาน",
+    "activity": "กิจกรรม",
+    "blog": "บล็อก",
+    "resume": "เรซูเม่",
+    "cv": "ซีวี"
   },
-  "About": {
-    "title": "About",
-    "description": "This is the about page."
+  "Portfolio": {
+    "introduction": {
+      "wellcome_to_my_portfolio": "ยินดีต้อนรับสู่พอร์ตโฟลิโอ",
+      "hi_i_am": "สวัสดีครับ ผมชื่อ",
+      "fardee_useng": "นาย ฟัรดี อูเซ็ง",
+      "frontend_developer": "Frontend Developer",
+      "skills": "JavaScript, TypeScript, ReactJs และ NextJs",
+      "contact_me": "ติดต่อฉัน",
+      "my_work": "ผลงานของฉัน"
+    },
+    "about_me": {
+      "title": "เกี่ยวกับฉัน",
+      "description": "สวัสดีครับ ผมชื่อเล่น ดี อายุ 26 ปี ทำงานสาย Front-End Developer มาเกือบ 3 ปีแล้วครับ ถนัด JavaScript, TypeScript, React และ Next.js ผมชอบพัฒนาเว็บแอปที่ใช้งานง่าย โหลดไว แล้วก็ให้ประสบการณ์ที่ดีกับผู้ใช้ สนุกกับการออกแบบ UI/UX และชอบปรับแต่งให้เว็บทำงานได้ลื่นขึ้นเสมอ นอกจากนี้ ผมก็ชอบเรียนรู้เทคโนโลยีใหม่ ๆ และอัปเดตตัวเองอยู่ตลอดครับ "
+    },
+    "work_experience": {
+      "title": "ประสบการณ์การทำงาน",
+      "frontend_developer_at_ptt": {
+        "title": "Front-End Developer ที่ PTT Digital Solution (พนักงาน Outsourced Onsite)",
+        "work_range": "พฤษภาคม 2024 - เมษายน 2025",
+        "list_1": "พัฒนาและดูแลระบบ POS BackOffice สำหรับธุรกิจค้าปลีกขนาดใหญ่",
+        "list_2": "สร้างและออกแบบหน้าตา UI ด้วย Next.js และ TypeScript โดยคำนึงถึงความสามารถในการขยายระบบและเพิ่มประสิทธิภาพการทำงานให้ดียิ่งขึ้น",
+        "list_3": "ทำงานร่วมกับนักพัฒนาฝั่ง Backend และทีม BA (โดยไม่มีทีม UX/UI โดยเฉพาะ) เพื่อออกแบบและพัฒนา UI ตามความต้องการของธุรกิจ",
+        "list_4": "เชื่อมต่อ API ต่าง ๆ เพื่อรองรับการทำงานของระบบ POS, การวิเคราะห์ข้อมูล และการอัปเดตแบบเรียลไทม์"
+      },
+      "fullstack_developer_at_ics": {
+        "title": "ICreativeSystems Co.,Ltd - นักพัฒนา Full-Stack",
+        "work_range": "กันยายน 2023 - ธันวาคม 2023",
+        "list_1": "เปลี่ยนบทบาทไปเป็นนักพัฒนา Full-Stack สำหรับแพลตฟอร์ม Influencer Hiring Web App",
+        "list_2": "มุ่งเน้นไปที่การพัฒนา Backend โดยใช้ Golang และ PostgreSQL สำหรับการจัดการข้อมูล CRUD",
+        "list_3": "พัฒนาและเชื่อมต่อ RESTful APIs เพื่อจัดเก็บและดึงข้อมูล",
+        "list_4": "ดูแลและปรับปรุง Frontend โดยใช้ React.js และ TypeScript เพื่อให้ประสบการณ์การใช้งานราบรื่น",
+        "list_5": "ทำงานร่วมกับนักออกแบบ UX/UI, นักพัฒนา Backend และ Tester เพื่อให้กระบวนการพัฒนาเป็นไปอย่างราบรื่น"
+      },
+      "frontend_developer_at_ics": {
+        "title": "นักพัฒนาฟรอนต์เอนด์ที่ ICreativeSystems Co.,Ltd",
+        "work_range": "มิถุนายน 2022 - สิงหาคม 2023",
+        "pos_project": {
+          "title": "โปรเจกต์ 1: ระบบ POS (Electron.js)",
+          "list_1": "เข้ารับผิดชอบและดูแลระบบ POS ที่พัฒนาด้วย Electron.js โดยเน้นการปรับปรุงเสถียรภาพและประสิทธิภาพ",
+          "list_2": "ปรับปรุง UI และแก้ไขข้อผิดพลาดเพื่อเพิ่มความสามารถในการใช้งานของระบบ",
+          "list_3": "เชื่อมต่อ RESTful APIs เพื่อซิงโครไนซ์ข้อมูลและเพิ่มการประมวลผลแบบเรียลไทม์",
+          "list_4": "พัฒนา UI ให้รองรับทุกขนาดหน้าจอและความละเอียด",
+          "list_5": "ทำงานร่วมกับนักออกแบบ UX/UI, นักพัฒนา Backend และ Tester เพื่อพัฒนาประสบการณ์ผู้ใช้โดยรวม"
+        },
+        "hashu_project": {
+          "title": "โปรเจกต์ 2: Influencer Hiring Web App (HashU)",
+          "list_1": "พัฒนาเว็บแอปพลิเคชันสำหรับการว่าจ้างอินฟลูเอนเซอร์ โดยมุ่งเน้นไปที่ประสบการณ์ผู้ใช้และ UI ที่มีประสิทธิภาพสูง",
+          "list_2": "ใช้ React.js, TypeScript และ Material-UI (MUI) เพื่อสร้าง Frontend ที่สามารถขยายและรองรับการใช้งานได้ดี",
+          "list_3": "เชื่อมต่อ RESTful APIs เพื่อดึงและแสดงข้อมูลอินฟลูเอนเซอร์แบบไดนามิก",
+          "list_4": "ทำให้แอปพลิเคชันรองรับการแสดงผลบนอุปกรณ์และความละเอียดหน้าจอที่แตกต่างกัน",
+          "list_5": "ทำงานร่วมกับนักออกแบบ UX/UI, นักพัฒนา Backend และ Tester เพื่อปรับปรุงการออกแบบและฟังก์ชันการทำงานของแอปพลิเคชัน"
+        }
+      }
+    },
+    "skills_technologies": "ทักษะและเทคโนโลยี"
   }
 }
