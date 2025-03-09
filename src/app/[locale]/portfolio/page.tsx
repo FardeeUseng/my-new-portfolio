@@ -16,9 +16,7 @@ import muiIcon from "@/assets/icon/mui-icon.png";
 import tailwindIcon from "@/assets/icon/tailwind-icon.jpg";
 import reduxIcon from "@/assets/icon/redux-icon.png";
 import reactQueryIcon from "@/assets/icon/react-query-icon.png";
-import postmanIcon from "@/assets/icon/postman-icon.svg";
 import gitIcon from "@/assets/icon/git-icon.webp";
-// import ftu from "@/assets/education/ftu-logo.png";
 import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
 
 export default function Page() {
