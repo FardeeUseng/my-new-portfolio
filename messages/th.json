@@ -61,6 +61,24 @@
         }
       }
     },
-    "skills_technologies": "ทักษะและเทคโนโลยี"
+    "skills_technologies": "ทักษะและเทคโนโลยี",
+    "contact_me": {
+      "drawer_title": "ติดต่อฉัน",
+      "title": "ติดต่อฉัน",
+      "description": "มีคำถามหรือต้องการร่วมงานกันใช่ไหม? สามารถติดต่อฉันได้ผ่านแบบฟอร์มด้านล่างหรือช่องทางโซเชียลมีเดียของฉัน",
+      "contact_info": "ข้อมูลติดต่อ",
+      "email": "อีเมล",
+      "phone": "โทรศัพท์",
+      "find_me_on": "ค้นหาฉันบน",
+      "send_a_message": "ส่งข้อความ",
+      "to_email": "ถึงอีเมล",
+      "form_title": "หัวข้อ",
+      "form_your_title": "หัวข้อของคุณ",
+      "please_enter_your_title": "กรุณากรอกหัวข้อของคุณ",
+      "form_message": "ข้อความ",
+      "form_your_message": "ข้อความของคุณ",
+      "please_enter_your_message": "กรุณากรอกข้อความของคุณ",
+      "send_message": "ส่งข้อความ"
+    }
   }
 }

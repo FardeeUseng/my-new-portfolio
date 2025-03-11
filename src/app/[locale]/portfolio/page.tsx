@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import CustomButton from '@/components/Common/Button'
 import { Title } from '@/components/Common/Typography'
 import { Col, Row } from 'antd'
@@ -19,8 +21,11 @@ import reactQueryIcon from "@/assets/icon/react-query-icon.png";
 import gitIcon from "@/assets/icon/git-icon.webp";
 import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
 import { useTranslations } from 'next-intl'
+import ContactMe from '@/components/ContactMe'
 
 export default function Page() {
+  const [openContactMe, setOpenContactMe] = useState(false);
+
   const tPort = useTranslations("Portfolio");
   const tIntro = useTranslations("Portfolio.introduction");
   const tAboutMe = useTranslations("Portfolio.about_me");
@@ -55,14 +60,37 @@ export default function Page() {
               </div>
 
               <div className="flex gap-3 justify-center">
-                <CustomButton type="primary">{tIntro("contact_me")}</CustomButton>
-                <CustomButton type="primary">{tIntro("my_work")}</CustomButton>
+                <CustomButton type="primary" onClick={() => setOpenContactMe(true)}>
+                  {tIntro("contact_me")}
+                </CustomButton>
+                <CustomButton type="primary" disabled>{tIntro("my_work")}</CustomButton>
               </div>
 
               <div className="flex gap-3 justify-center">
-                <CustomButton className="dark:text-white" type="link" icon={<GithubOutlined />} />
-                <CustomButton className="dark:text-white" type="link" icon={<MediumOutlined />} />
-                <CustomButton className="dark:text-white" type="link" icon={<LinkedinOutlined />} />
+                <a
+                  href="https://github.com/FardeeUseng"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
+                >
+                  <GithubOutlined />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/fardee-useng-060b88264"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
+                >
+                  <LinkedinOutlined />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/fardee-useng-060b88264"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
+                >
+                  <MediumOutlined />
+                </a>
               </div>
             </div>
 
@@ -347,6 +375,8 @@ export default function Page() {
           </Col>
         </Row>
       </section>
+
+      {openContactMe && <ContactMe open={openContactMe} onClose={setOpenContactMe} />}
     </main>
   )
 }
