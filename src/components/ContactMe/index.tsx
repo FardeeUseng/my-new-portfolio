@@ -1,7 +1,7 @@
 // ContactSection.tsx
 import React, { useState } from 'react';
-import { Form, Input, Button, message, Row, Col, Card, Drawer } from 'antd';
-import { MailOutlined, PhoneOutlined, UserOutlined, GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons';
+import { Form, Input, Button, Row, Col, Card, Drawer } from 'antd';
+import { MailOutlined, PhoneOutlined, GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons';
 import CustomInput from '../Common/Input/TextInput';
 import { useTranslations } from 'next-intl';
 
@@ -26,18 +26,12 @@ export default function ContactMe({ open, onClose } : Props) {
 
   const onFinish = async (values: ContactFormValues) => {
     setLoading(true);
-    try {
 
-      const subject = encodeURIComponent(values.title);
-      const body = encodeURIComponent(values.message);
-      window.open(`https://mail.google.com/mail/?view=cm&to=${values.to_email}&su=${subject}&body=${body}`, '_blank');
+    const subject = encodeURIComponent(values.title);
+    const body = encodeURIComponent(values.message);
+    window.open(`https://mail.google.com/mail/?view=cm&to=${values.to_email}&su=${subject}&body=${body}`, '_blank');
 
-      form.resetFields();
-    } catch (error) {
-      message.error('Failed to send your message. Please try again later.');
-    } finally {
-      setLoading(false);
-    }
+    form.resetFields();
   };
 
   return (

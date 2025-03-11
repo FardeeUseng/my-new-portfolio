@@ -12,6 +12,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Sidebar from "../Sidbar";
+import { motion } from "framer-motion";
 
 export default function PortfolioHeader() {
   const [openSidbar, setOpenSidbar] = useState(false);
@@ -63,7 +64,12 @@ export default function PortfolioHeader() {
         style={{ background: "none", padding: 0 }}
         className="fixed top-0 left-0 right-0 z-50 md:hidden"
       >
-        <div className="flex justify-between items-center h-14 bg-white dark:bg-grey-800 pl-2 pr-4 shadow-lg">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-between items-center h-14 bg-white dark:bg-grey-800 pl-2 pr-4 shadow-lg"
+        >
           <div className="flex items-center">
             <CustomButton
               icon={<AlignLeftOutlined className="text-thirdary dark:text-white"
@@ -75,7 +81,7 @@ export default function PortfolioHeader() {
           </div>
           <div className="flex gap-x-2 items-center">
             <div className="flex md:hidden gap-x-2">
-              <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
+              <a href="/pdf/Resume-Fardee-Useng.pdf" download="Resume-Fardee-Useng.pdf">
                 <CustomButton type="primary" className="font-semibold">
                   {tNavbar("resume")}
                 </CustomButton>
@@ -124,14 +130,19 @@ export default function PortfolioHeader() {
               </Dropdown>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Layout.Header>
 
       <Layout.Header
         style={{ background: "none", padding: 0 }}
         className="sticky top-8 z-50 hidden md:block"
       >
-        <div className="w-full h-16 flex justify-between items-center shadow-lg rounded-sm bg-white dark:bg-grey-800 p-5">
+        <motion.div
+          className="w-full h-16 flex justify-between items-center shadow-lg rounded-sm bg-white dark:bg-grey-800 p-5"
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div
             className="text-2xl text-white font-bold bg-orange-600 inline-flex justify-center items-center w-10 h-10"
           >
@@ -160,7 +171,7 @@ export default function PortfolioHeader() {
 
           <div className="flex gap-x-5">
             <div className="flex gap-x-2">
-              <a href="/pdf/CV-Fardee-Useng.pdf" download="CV-Fardee-Useng.pdf">
+              <a href="/pdf/Resume-Fardee-Useng.pdf" download="Resume-Fardee-Useng.pdf">
                 <CustomButton type="primary" icon={<DownloadOutlined />} className="font-semibold">
                   {tNavbar("resume")}
                 </CustomButton>
@@ -196,7 +207,7 @@ export default function PortfolioHeader() {
               </Dropdown>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Layout.Header>
 
       {openSidbar && <Sidebar open={openSidbar} onClose={setOpenSidbar} />}

@@ -1,119 +1,224 @@
 "use client"
 
-import React, { useState } from 'react'
-import CustomButton from '@/components/Common/Button'
-import { Title } from '@/components/Common/Typography'
-import { Col, Row } from 'antd'
-import Image from 'next/image'
-import profile from "@/assets/profile/profile2.png";
-import info1 from "@/assets/infographic/infographic-1.png";
-import info2 from "@/assets/infographic/infographic-2.png";
-import infoProfile2 from "@/assets/profile/info-profile-2.png";
-import reactIcon from "@/assets/icon/reactjs-icon.webp";
-import nextIcon from "@/assets/icon/nextjs-icon.jpg";
+import React, { useEffect, useState } from 'react';
+// antd
+import { Col, Row } from 'antd';
+import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons';
+// component
+import ContactMe from '@/components/ContactMe';
+import CustomButton from '@/components/Common/Button';
+import { Title } from '@/components/Common/Typography';
+import Loader from '@/components/Common/Loading/Loader';
+// asset
 import jsIcon from "@/assets/icon/js-icon.png";
 import tsIcon from "@/assets/icon/ts-icon.png";
-import antdIcon from "@/assets/icon/antd-icon.png";
 import muiIcon from "@/assets/icon/mui-icon.png";
-import tailwindIcon from "@/assets/icon/tailwind-icon.jpg";
-import reduxIcon from "@/assets/icon/redux-icon.png";
-import reactQueryIcon from "@/assets/icon/react-query-icon.png";
 import gitIcon from "@/assets/icon/git-icon.webp";
-import { GithubOutlined, LinkedinOutlined, MediumOutlined } from '@ant-design/icons'
-import { useTranslations } from 'next-intl'
-import ContactMe from '@/components/ContactMe'
+import antdIcon from "@/assets/icon/antd-icon.png";
+import profile from "@/assets/profile/profile2.png";
+import nextIcon from "@/assets/icon/nextjs-icon.jpg";
+import reduxIcon from "@/assets/icon/redux-icon.png";
+import reactIcon from "@/assets/icon/reactjs-icon.webp";
+import info1 from "@/assets/infographic/infographic-1.png";
+import info2 from "@/assets/infographic/infographic-2.png";
+import tailwindIcon from "@/assets/icon/tailwind-icon.jpg";
+import infoProfile2 from "@/assets/profile/info-profile-2.png";
+import reactQueryIcon from "@/assets/icon/react-query-icon.png";
+// other
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function Page() {
   const [openContactMe, setOpenContactMe] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const tPort = useTranslations("Portfolio");
   const tIntro = useTranslations("Portfolio.introduction");
   const tAboutMe = useTranslations("Portfolio.about_me");
   const tWork = useTranslations("Portfolio.work_experience");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  if (isLoading) return <Loader />
+  
   return (
     <main>
       <section className="relative flex flex-col md:mt-8 min-h-screen md:min-h-[calc(100vh-95px)]">
-        <div className="absolute bottom-0 left-0">
+        <motion.div
+          className="absolute bottom-0 left-0"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Image src={info1} alt="info1" height={250} className="h-40 lg:h-60 w-28 lg:w-36" />
-        </div>
-        <div className="absolute top-0 right-0">
+        </motion.div>
+        <motion.div
+          className="absolute top-0 right-0"
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Image src={info2} alt="info1" height={250} className="h-40 lg:h-60 w-28 lg:w-36" />
-        </div>
-
+        </motion.div>
         <div className="flex-1 flex flex-col items-center justify-center gap-y-12">
-          <div className="flex justify-center bg-blue-300 rounded-full">
+          <motion.div
+            className="flex justify-center bg-blue-300 rounded-full"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <span className="text-thirdary text-base text-center px-3 py-1 text-main-gradient font-bold">
               {tIntro("wellcome_to_my_portfolio")}
             </span>
-          </div>
+          </motion.div>
           <div className="flex flex-col lg:flex-row justify-between items-center gap-x-5 xl:gap-x-14 w-full">
             <div className="flex-1 flex flex-col justify-center items-center lg:items-end gap-y-3">
               <div className="my-2 text-center lg:text-end">
-                <h1 className="text-thirdary dark:text-white text-2xl lg:text-3xl font-bold my-2">{tIntro("hi_i_am")}</h1>
-                <h1 className="text-thirdary dark:text-white text-3xl lg:text-4xl font-bold my-2">
+                <motion.h1
+                  className="text-thirdary dark:text-white text-2xl lg:text-3xl font-bold my-2"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  {tIntro("hi_i_am")}
+                </motion.h1>
+                <motion.h1
+                  className="text-thirdary dark:text-white text-3xl lg:text-4xl font-bold my-2"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                >
                   {tIntro("fardee_useng")}
-                </h1>
-                <h1 className="text-main-gradient text-4xl md:text-5xl font-bold lg:text-5xl mt-5 lg:mt-2">
+                </motion.h1>
+                <motion.h1
+                  className="text-main-gradient text-4xl md:text-5xl font-bold lg:text-5xl mt-5 lg:mt-2"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+                >
                   {tIntro("frontend_developer")}
-                </h1>
-                <h6 className="text-main-gradient mt-2 md:text-base font-semibold">{tIntro("skills")}</h6>
+                </motion.h1>
+                <motion.h6
+                  className="text-main-gradient mt-2 md:text-base font-semibold"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1.0, ease: "easeOut", delay: 0.6 }}
+                >
+                  {tIntro("skills")}
+                </motion.h6>
               </div>
 
               <div className="flex gap-3 justify-center">
-                <CustomButton type="primary" onClick={() => setOpenContactMe(true)}>
-                  {tIntro("contact_me")}
-                </CustomButton>
-                <CustomButton type="primary" disabled>{tIntro("my_work")}</CustomButton>
+                <motion.div
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  <CustomButton type="primary" onClick={() => setOpenContactMe(true)}>
+                    {tIntro("contact_me")}
+                  </CustomButton>
+                </motion.div>
+                <motion.div
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                >
+                  <CustomButton type="primary" disabled>{tIntro("my_work")}</CustomButton>
+                </motion.div>
               </div>
 
               <div className="flex gap-3 justify-center">
-                <a
+                <motion.a
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   href="https://github.com/FardeeUseng"
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
                 >
                   <GithubOutlined />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   href="https://www.linkedin.com/in/fardee-useng-060b88264"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
                 >
                   <LinkedinOutlined />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   href="https://www.linkedin.com/in/fardee-useng-060b88264"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xl text-gray-700 hover:text-blue-500 transition-colors"
                 >
                   <MediumOutlined />
-                </a>
+                </motion.a>
               </div>
             </div>
 
             <div className="hidden lg:flex gap-3 flex-[0.8]">
-              <Image src={infoProfile2} alt='profile' height={300} className="h-80" />
-              <div className="flex flex-col justify-end gap-y-3">
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                >
+                <Image src={infoProfile2} alt='profile' height={300} className="h-80" />
+              </motion.div>
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                className="flex flex-col justify-end gap-y-3"
+                >
                 <Image src={jsIcon} alt="javaScript" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={tsIcon} alt="typeScript" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={reactIcon} alt="reactJs" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={nextIcon} alt="nextJs" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
-              </div>
-              <div className="flex flex-col justify-end gap-y-3">
+              </motion.div>
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                className="flex flex-col justify-end gap-y-3"
+                >
                 <Image src={antdIcon} alt="ant design" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={muiIcon} alt="material ui" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={tailwindIcon} alt="tailwind" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
-              </div>
-              <div className="flex flex-col justify-end gap-y-3">
+              </motion.div>
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                className="flex flex-col justify-end gap-y-3"
+                >
                 <Image src={reduxIcon} alt="redux" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
                 <Image src={reactQueryIcon} alt="react query" className="rounded-sm shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
-              </div>
-              <div className="flex flex-col justify-end gap-y-3">
+              </motion.div>
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                className="flex flex-col justify-end gap-y-3"
+              >
                 <Image src={gitIcon} alt="git version control" className="rounded-full shadow-lg w-6 xl:w-8 h-6 xl:h-8" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

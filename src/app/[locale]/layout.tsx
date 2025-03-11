@@ -5,6 +5,8 @@ import { Roboto } from "next/font/google";
 import "../../styles/globals.css";
 import { ThemeProvider } from '@/providers/ThemeProvider';
 import Favicon from "@/app/favicon.ico";
+import { Suspense } from 'react';
+import Loader from '@/components/Common/Loading/Loader';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -31,7 +33,9 @@ export default async function LocaleLayout({ children }: {
       <body className={roboto.className}>
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={message}>
-            {children}
+            <Suspense fallback={<Loader />}>
+              {children}
+            </Suspense>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
