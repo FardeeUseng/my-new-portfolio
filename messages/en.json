@@ -1,11 +1,84 @@
 {
-  "Index": {
-    "title": "Home",
-    "description": "This is the home page.",
-    "navigateToAbout": "Navigate to about"
+  "Navbar": {
+    "portfolio": "Portfolio",
+    "work": "Work",
+    "activity": "Activity",
+    "blog": "Blog",
+    "resume": "Resume",
+    "cv": "CV"
   },
-  "About": {
-    "title": "About",
-    "description": "This is the about page."
+  "Portfolio": {
+    "introduction": {
+      "wellcome_to_my_portfolio": "Wellcome to my Portfolio",
+      "hi_i_am": "Hii !!, I'm",
+      "fardee_useng": "Fardee Useng",
+      "frontend_developer": "Frontend Developer",
+      "skills": "JavaScript, TypeScript, ReactJs and NextJs",
+      "contact_me": "Contact Me",
+      "my_work": "My Work"
+    },
+    "about_me": {
+      "title": "About Me",
+      "description": "I am a Front-End Developer with 2.6 years of experience specializing in JavaScript, TypeScript, React, and Next.js. Passionate about building user-friendly and high-performance web applications, I enjoy crafting intuitive UI/UX experiences and optimizing front-end performance. Always eager to learn and stay updated with the latest technologies in the web development ecosystem."
+    },
+    "work_experience": {
+      "title": "Work Experience",
+      "frontend_developer_at_ptt": {
+        "title": "Front-End Developer at PTT Digital Solution (Outsourced Onsite)",
+        "work_range": "May 2024 - APR 2025",
+        "list_1": "Developed and maintained a POS BackOffice Web Application for a large-scale retail business.",
+        "list_2": "Built the front-end using Next.js and TypeScript, ensuring scalability and performance.",
+        "list_3": "Worked closely with back-end developers and business teams (without a dedicated UX/UI team) to design and implement UI components based on business requirements.",
+        "list_4": "Integrated various APIs to support POS operations, data analytics, and real-time updates."
+      },
+      "fullstack_developer_at_ics": {
+        "title": "ICreativeSystems Co.,Ltd – Full-Stack Developer",
+        "work_range": "Set 2023 - Dec 2023",
+        "list_1": "Transitioned to full-stack development for the Influencer Hiring Web App.",
+        "list_2": "Focused primarily on CRUD operations using Golang and PostgreSQL for back-end development.",
+        "list_3": "Developed and integrated RESTful APIs to handle data storage and retrieval.",
+        "list_4": "Maintained and improved the front-end with React.js and TypeScript, ensuring a smooth user experience.",
+        "list_5": "Worked with UX/UI designers, back-end developers, and testers to ensure a cohesive development process."
+      },
+      "frontend_developer_at_ics": {
+        "title": "Front-end Developer at ICreativeSystems Co.,Ltd",
+        "work_range": "Jun 2022 - Aug 2023",
+        "pos_project": {
+          "title": "Project 1: POS System (Electron.js)",
+          "list_1": "Took over and maintained an existing POS system built with Electron.js, ensuring stability and performance improvements.",
+          "list_2": "Implemented UI enhancements and bug fixes, optimizing system usability and responsiveness.",
+          "list_3": "Integrated RESTful APIs to synchronize data and enhance real-time processing.",
+          "list_4": "Developed fully responsive UI for different screen sizes and resolutions.",
+          "list_5": "Collaborated closely with UX/UI designers, back-end developers, and testers to improve overall user experience."
+        },
+        "hashu_project": {
+          "title": "Project 2: Influencer Hiring Web App(HashU)",
+          "list_1": "Developed a web application for influencer hiring, focusing on seamless user experience and high-performance UI.",
+          "list_2": "Used React.js, TypeScript, and Material-UI (MUI) to build a scalable and responsive front-end.",
+          "list_3": "Integrated RESTful APIs to fetch and display influencer data dynamically.",
+          "list_4": "Ensured the application was fully responsive across different devices and screen resolutions.",
+          "list_5": "Worked with UX/UI designers, back-end developers, and testers to refine the application’s design and functionality."
+        }
+      }
+    },
+    "skills_technologies": "Skills & Technologies",
+    "contact_me": {
+      "drawer_title": "Contact Me",
+      "title": "Get In Touch",
+      "description": "Have a question or want to work together? Feel free to contact me using the form below or through my social media channels.",
+      "contact_info": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "find_me_on": "Find me on",
+      "send_a_message": "Send a Message",
+      "to_email": "To Email",
+      "form_title": "Title",
+      "form_your_title": "Your Title",
+      "please_enter_your_title": "Please enter your title",
+      "form_message": "Message",
+      "form_your_message": "Your Message",
+      "please_enter_your_message": "Please enter your Message",
+      "send_message": "Send Message"
+    }
   }
 }
